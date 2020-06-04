@@ -5,6 +5,9 @@ import 'package:flutter/services.dart';
 class Flutterbluetoothadapter {
   MethodChannel _channel = const MethodChannel('flutterbluetoothadapter');
 
+  static const EventChannel _connectionStatusEventChannel =
+      const EventChannel('connection_status');
+
   Future<String> platformVersion() async {
     final String version = await _channel.invokeMethod('getPlatformVersion');
     return version;
@@ -26,5 +29,29 @@ class Flutterbluetoothadapter {
     bool result = await _channel.invokeMethod('checkBt');
     print("HERE ${result}");
     return result;
+  }
+
+  Future<bool> startServer() async {
+    var result = await _channel.invokeMethod('startServer');
+    print("HERE ${result}");
+    return true;
+  }
+
+  Future<bool> startClient(int position) async {
+    var result =
+        await _channel.invokeMethod('startClient', {"index": position ?? 0});
+    print("HERE ${result}");
+    return true;
+  }
+
+  Future<bool> sendMessage(String message) async {
+    var result =
+        await _channel.invokeMethod('sendMessage', {"message": message ?? ""});
+    print("HERE ${result}");
+    return true;
+  }
+
+  Stream<String> connectionStatus() {
+    return _connectionStatusEventChannel.receiveBroadcastStream();
   }
 }

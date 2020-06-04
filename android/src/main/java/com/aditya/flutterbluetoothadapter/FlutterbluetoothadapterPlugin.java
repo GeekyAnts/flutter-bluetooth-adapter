@@ -19,6 +19,7 @@ import java.util.UUID;
 
 import io.flutter.app.FlutterActivity;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
@@ -28,8 +29,9 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 /**
  * FlutterbluetoothadapterPlugin
  */
-public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallHandler {
+public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallHandler, EventChannel.StreamHandler {
     private MethodChannel channel;
+    private EventChannel connectionStatus;
     BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     BluetoothDevice[] btDevices;
     Registrar activityRegistrar;
@@ -42,36 +44,7 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
     static final int STATE_MESSAGE_RECEIVED = 5;
     private static final String APP_NAME = "BtChat";
     private static final UUID MY_UUID = UUID.fromString("20585adb-d260-445e-934b-032a2c8b2e14");
-
-    Handler handler = new Handler(new Handler.Callback() {
-        @Override
-        public boolean handleMessage(@NonNull Message msg) {
-            switch (msg.what) {
-                case STATE_LISTENING:
-//                    status.setText("Listening");
-                    break;
-
-                case STATE_CONNECTING:
-//                    status.setText("Connecting");
-                    break;
-
-                case STATE_CONNECTED:
-//                    status.setText("Connected");
-                    break;
-
-                case STATE_CONNECTION_FAILED:
-//                    status.setText("Connection Failed");
-                    break;
-
-                case STATE_MESSAGE_RECEIVED:
-//                    byte[] readBuffer = (byte[]) msg.obj;
-//                    String tempMsg = new String(readBuffer, 0, msg.arg1);
-//                    message.setText(tempMsg);
-                    break;
-            }
-            return true;
-        }
-    });
+    private EventChannel.EventSink eventSink;
 
     public FlutterbluetoothadapterPlugin() {
         this.activityRegistrar = null;
@@ -88,13 +61,58 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
         channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "flutterbluetoothadapter");
         channel.setMethodCallHandler(this);
+        connectionStatus = new EventChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "connection_status");
+        channel.setMethodCallHandler(this);
     }
 
     public static void registerWith(Registrar registrar) {
+        FlutterbluetoothadapterPlugin flutterbluetoothadapterPlugin = new FlutterbluetoothadapterPlugin(registrar);
         final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutterbluetoothadapter");
-        channel.setMethodCallHandler(new FlutterbluetoothadapterPlugin(registrar));
-
+        channel.setMethodCallHandler(flutterbluetoothadapterPlugin);
+        final EventChannel connectionStatusEventChannel = new EventChannel(registrar.messenger(), "connection_status");
+        connectionStatusEventChannel.setStreamHandler(flutterbluetoothadapterPlugin);
     }
+
+    Handler handler = new Handler(new Handler.Callback() {
+        @Override
+        public boolean handleMessage(@NonNull Message msg) {
+            switch (msg.what) {
+                case STATE_LISTENING:
+                    if (eventSink != null) {
+                        eventSink.success("Listening");
+                    }
+                    break;
+
+                case STATE_CONNECTING:
+                    if (eventSink != null) {
+                        eventSink.success("Connecting");
+                    }
+                    break;
+
+                case STATE_CONNECTED:
+                    if (eventSink != null) {
+                        eventSink.success("Connected");
+                    }
+                    break;
+
+                case STATE_CONNECTION_FAILED:
+                    if (eventSink != null) {
+                        eventSink.success("Connection Failed");
+                    }
+                    break;
+
+                case STATE_MESSAGE_RECEIVED:
+                    byte[] readBuffer = (byte[]) msg.obj;
+                    String tempMsg = new String(readBuffer, 0, msg.arg1);
+                    if (eventSink != null) {
+                        eventSink.success(tempMsg);
+                    }
+                    break;
+            }
+            return true;
+        }
+    });
+
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
@@ -125,6 +143,36 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
             case "checkBt":
                 checkBluetoothOnOff(result);
                 break;
+            case "startServer":
+                try {
+                    ServerClass serverClass = new ServerClass();
+                    serverClass.start();
+                    result.success(true);
+                } catch (Exception except) {
+                    result.success(false);
+                }
+                break;
+
+            case "startClient":
+                try {
+                    int index = call.argument("index");
+                    ClientClass clientClass = new ClientClass(btDevices[index]);
+                    clientClass.start();
+                    result.success(true);
+                } catch (Exception except) {
+                    result.success(false);
+                }
+                break;
+            case "sendMessage":
+                try {
+                    String message = call.argument("message");
+                    String string = String.valueOf(message);
+                    sendRecieve.write(string.getBytes());
+                    result.success(true);
+                } catch (Exception except) {
+                    result.success(false);
+                }
+                break;
             default:
                 result.notImplemented();
                 break;
@@ -150,6 +198,18 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
         return "Unknown status";
     }
 
+    @Override
+    public void onListen(Object arguments, EventChannel.EventSink events) {
+        this.eventSink = events;
+    }
+
+    @Override
+    public void onCancel(Object arguments) {
+        this.eventSink = null;
+    }
+
+
+    // Thread Classes for communication
     private class ServerClass extends Thread {
         private BluetoothServerSocket serverSocket;
 

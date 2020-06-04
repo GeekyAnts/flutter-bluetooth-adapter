@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5042604b-11b2-40ca-ba49-824fb9a5a726" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutterbluetoothadapter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutterbluetoothadapter.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +54,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
