@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="d9876d5b-3f4e-46ec-9d5e-cf336167c5f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" afterDir="false" />
+    <list default="true" id="9d2bcf8f-ea42-45d6-bef6-7668202b90bf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../flutterbluetoothadapter_example.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../flutterbluetoothadapter_example.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +20,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="OJOBNZJBQO8SLB4D" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Samsung_A10_API_R" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -28,7 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1cqGST42sTZY6XMEGxdMKXGAzWs" />
+  <component name="ProjectId" id="1ctUjIvbP6aWXcS0BoQDlcmPzWo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -111,11 +119,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d9876d5b-3f4e-46ec-9d5e-cf336167c5f2" name="Default Changelist" comment="" />
-      <created>1591248709171</created>
+      <changelist id="9d2bcf8f-ea42-45d6-bef6-7668202b90bf" name="Default Changelist" comment="" />
+      <created>1591347516543</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1591248709171</updated>
+      <updated>1591347516543</updated>
     </task>
     <servers />
   </component>

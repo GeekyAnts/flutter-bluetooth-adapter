@@ -9,10 +9,17 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
+      <excludeFolder url="file://$MODULE_DIR$/event_channel_test/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/event_channel_test/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/event_channel_test/build" />
+      <excludeFolder url="file://$MODULE_DIR$/event_channel_test/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/event_channel_test/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/event_channel_test/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/event_channel_test/example/build/app/intermediates/flutter/debug/flutter_assets/packages" />
+      <excludeFolder url="file://$MODULE_DIR$/event_channel_test/example/build/app/intermediates/merged_assets/debug/out/flutter_assets/packages" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Dart SDK" level="project" />
     <orderEntry type="library" name="Flutter Plugins" level="project" />
-    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>

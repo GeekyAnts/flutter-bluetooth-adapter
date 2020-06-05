@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutterbluetoothadapter/flutterbluetoothadapter.dart';
 
 void main() {
@@ -14,31 +13,25 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+  Flutterbluetoothadapter flutterbluetoothadapter = Flutterbluetoothadapter();
+  StreamSubscription _btConnectionStatusListener;
+  String _connectionStatus = "NONE";
+  List devices = [];
+  String _recievedMessage;
+  TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
+    _startListening();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await Flutterbluetoothadapter().platformVersion();
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
+  _startListening() {
+    _btConnectionStatusListener =
+        flutterbluetoothadapter.connectionStatus().listen((dynamic status) {
+      setState(() {
+        _connectionStatus = status.toString();
+      });
     });
   }
 
@@ -51,42 +44,113 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Center(
-              child: Text('Running on: $_platformVersion\n'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Flexible(
+                  fit: FlexFit.tight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RaisedButton(
+                      onPressed: () async {
+                        await flutterbluetoothadapter.startServer();
+                      },
+                      child: Text('LISTEN'),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  fit: FlexFit.tight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RaisedButton(
+                      onPressed: () async {
+                        devices = await flutterbluetoothadapter.getDevices();
+                        setState(() {});
+                      },
+                      child: Text('LIST DEVICES'),
+                    ),
+                  ),
+                )
+              ],
             ),
-            RaisedButton(
-              onPressed: () async {
-                try {
-                  await Flutterbluetoothadapter().getDevices();
-                } catch (err) {
-                  //
-                }
-              },
-              child: Text("LIST DEVICES"),
+            Text("STATUS - $_connectionStatus"),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 8.0,
+                vertical: 20,
+              ),
+              child: ListView(
+                shrinkWrap: true,
+                children: _createDevices(),
+              ),
             ),
-            RaisedButton(
-              onPressed: () async {
-                try {
-                  await Flutterbluetoothadapter().getDevice(1);
-                } catch (err) {
-                  //
-                }
-              },
-              child: Text("GET DEVICE"),
+            Text(
+              _recievedMessage ?? "MESSAGE",
+              style: TextStyle(fontSize: 24),
             ),
-            RaisedButton(
-              onPressed: () async {
-                try {
-                  await Flutterbluetoothadapter().checkBluetooth();
-                } catch (err) {
-                  //
-                }
-              },
-              child: Text("Check BT"),
-            ),
+            Row(
+              children: <Widget>[
+                Flexible(
+                  flex: 4,
+                  fit: FlexFit.tight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextField(
+                      controller: _controller,
+                      decoration: InputDecoration(hintText: "Write message"),
+                    ),
+                  ),
+                ),
+                Flexible(
+                  fit: FlexFit.tight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RaisedButton(
+                      onPressed: () {
+                        flutterbluetoothadapter
+                            .sendMessage(_controller.text ?? "no msg");
+                        _controller.text = "";
+                      },
+                      child: Text('SEND'),
+                    ),
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
     );
+  }
+
+  _createDevices() {
+    if (devices.isEmpty) {
+      return [
+        Center(
+          child: Text("No Paired Devices listed..."),
+        )
+      ];
+    }
+    List<Widget> deviceList = [];
+    devices.forEach((element) {
+      deviceList.add(
+        InkWell(
+          key: UniqueKey(),
+          onTap: () {
+            flutterbluetoothadapter.startClient(devices.indexOf(element));
+          },
+          child: Container(
+            padding: EdgeInsets.all(4),
+            decoration: BoxDecoration(border: Border.all()),
+            child: Text(
+              element.toString(),
+              style: TextStyle(fontSize: 18),
+            ),
+          ),
+        ),
+      );
+    });
+    return deviceList;
   }
 }
