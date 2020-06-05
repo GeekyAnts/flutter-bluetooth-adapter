@@ -1,12 +1,12 @@
 package com.aditya.flutterbluetoothadapter;
 
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 
@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.UUID;
 
-import io.flutter.app.FlutterActivity;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.EventChannel;
 import io.flutter.plugin.common.MethodCall;
@@ -33,7 +32,7 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
     private MethodChannel channel;
     private EventChannel connectionStatus;
     BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-    BluetoothDevice[] btDevices;
+    static BluetoothDevice[] btDevices;
     SendRecieve sendRecieve;
     static final int STATE_LISTENING = 1;
     static final int STATE_CONNECTING = 2;
@@ -147,24 +146,26 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
                 break;
 
             case "startClient":
-                try {
-                    int index = call.argument("index");
-                    ClientClass clientClass = new ClientClass(btDevices[index]);
-                    clientClass.start();
-                    result.success(true);
-                } catch (Exception except) {
-                    result.success(false);
-                }
+//                try {
+                System.out.println("LENGTH " + btDevices.length);
+                Log.d("DEBUG HEREEEE", "LENGTH " + btDevices.length);
+                int index = call.argument("index");
+                ClientClass clientClass = new ClientClass(btDevices[index]);
+                clientClass.start();
+                result.success(true);
+//                } catch (Exception except) {
+//                    result.success(false);
+//                }
                 break;
             case "sendMessage":
-                try {
-                    String message = call.argument("message");
-                    String string = String.valueOf(message);
-                    sendRecieve.write(string.getBytes());
-                    result.success(true);
-                } catch (Exception except) {
-                    result.success(false);
-                }
+//                try {
+                String message = call.argument("message");
+                String string = String.valueOf(message);
+                sendRecieve.write(string.getBytes());
+                result.success(true);
+//                } catch (Exception except) {
+//                    result.success(false);
+//                }
                 break;
             default:
                 result.notImplemented();

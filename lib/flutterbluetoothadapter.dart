@@ -13,8 +13,8 @@ class Flutterbluetoothadapter {
     return version;
   }
 
-  Future<List<String>> getDevices() async {
-    var devices = await _channel.invokeMethod('getBtDevices');
+  Future<List> getDevices() async {
+    List devices = await _channel.invokeMethod('getBtDevices');
     print("HERE - ${devices}");
     return devices;
   }
@@ -38,6 +38,7 @@ class Flutterbluetoothadapter {
   }
 
   Future<bool> startClient(int position) async {
+    print("HERE $position");
     var result =
         await _channel.invokeMethod('startClient', {"index": position ?? 0});
     print("HERE ${result}");
