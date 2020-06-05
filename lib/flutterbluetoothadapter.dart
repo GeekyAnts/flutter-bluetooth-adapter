@@ -51,7 +51,7 @@ class Flutterbluetoothadapter {
     return true;
   }
 
-  Stream<String> connectionStatus() {
+  Stream<dynamic> connectionStatus() {
     return _connectionStatusEventChannel.receiveBroadcastStream();
   }
 }
