@@ -23,6 +23,11 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    flutterbluetoothadapter
+        .initBlutoothConnection("20585adb-d260-445e-934b-032a2c8b2e14");
+    flutterbluetoothadapter
+        .checkBluetooth()
+        .then((value) => print(value.toString()));
     _startListening();
   }
 
