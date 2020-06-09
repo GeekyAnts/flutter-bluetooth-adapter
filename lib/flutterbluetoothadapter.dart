@@ -8,9 +8,12 @@ class Flutterbluetoothadapter {
   static const EventChannel _connectionStatusEventChannel =
       const EventChannel('connection_status');
 
-  Future<String> platformVersion() async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
+  static const EventChannel _receivedMessagesEventChannel =
+      const EventChannel('recieved_message_events');
+
+  Future<bool> initBlutoothConnection(String uuid) async {
+    return await _channel
+        .invokeMethod('initBlutoothConnection', {"uuid": uuid});
   }
 
   Future<List> getDevices() async {
@@ -54,5 +57,9 @@ class Flutterbluetoothadapter {
 
   Stream<dynamic> connectionStatus() {
     return _connectionStatusEventChannel.receiveBroadcastStream();
+  }
+
+  Stream<dynamic> receiveMessages() {
+    return _receivedMessagesEventChannel.receiveBroadcastStream();
   }
 }

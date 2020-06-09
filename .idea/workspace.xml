@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5042604b-11b2-40ca-ba49-824fb9a5a726" name="Default Changelist" comment="">
+    <list default="true" id="5042604b-11b2-40ca-ba49-824fb9a5a726" name="Default Changelist" comment="fixed type mismatch errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/flutterbluetoothadapter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutterbluetoothadapter.dart" afterDir="false" />
@@ -14,6 +14,11 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Samsung_A10_API_R" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1coIIVyHbKezg78KuaJKdMCVy2L" />
@@ -61,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591350351889</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fixed type mismatch errors">
+      <created>1591357157273</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591357157273</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -80,6 +92,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="implemented event channels for subscribing to handlers" />
     <MESSAGE value="code refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="code refactor" />
+    <MESSAGE value="fixed type mismatch errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed type mismatch errors" />
   </component>
 </project>
