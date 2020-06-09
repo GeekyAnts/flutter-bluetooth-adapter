@@ -14,7 +14,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   Flutterbluetoothadapter flutterbluetoothadapter = Flutterbluetoothadapter();
-  StreamSubscription _btConnectionStatusListener;
+  StreamSubscription _btConnectionStatusListener, _btReceivedMessageListener;
   String _connectionStatus = "NONE";
   List devices = [];
   String _recievedMessage;
@@ -31,6 +31,12 @@ class _MyAppState extends State<MyApp> {
         flutterbluetoothadapter.connectionStatus().listen((dynamic status) {
       setState(() {
         _connectionStatus = status.toString();
+      });
+    });
+    _btReceivedMessageListener =
+        flutterbluetoothadapter.receiveMessages().listen((dynamic newMessage) {
+      setState(() {
+        _recievedMessage = newMessage.toString();
       });
     });
   }
@@ -86,7 +92,7 @@ class _MyAppState extends State<MyApp> {
               ),
             ),
             Text(
-              _recievedMessage ?? "MESSAGE",
+              _recievedMessage ?? "NO MESSAGE",
               style: TextStyle(fontSize: 24),
             ),
             Row(
