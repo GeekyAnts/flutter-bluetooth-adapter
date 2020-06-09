@@ -4,11 +4,15 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +27,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
+import io.flutter.plugin.common.PluginRegistry;
 
 /**
  * FlutterbluetoothadapterPlugin
@@ -43,9 +47,12 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
     private static UUID MY_UUID = UUID.fromString("20585adb-d260-445e-934b-032a2c8b2e14");
     private static EventChannel.EventSink eventSink;
     private static EventChannel.EventSink receiveMessageSink;
+    static Context context;
+    Intent btEnabelingIntent;
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+        context = flutterPluginBinding.getApplicationContext();
         channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "flutterbluetoothadapter");
         channel.setMethodCallHandler(this);
         connectionStatus = new EventChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "connection_status");
@@ -54,7 +61,8 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
         receiveMessages.setStreamHandler(receivedMessagesStreamHandler);
     }
 
-    public static void registerWith(Registrar registrar) {
+    public static void registerWith(PluginRegistry.Registrar registrar) {
+        context = registrar.context();
         FlutterbluetoothadapterPlugin flutterbluetoothadapterPlugin = new FlutterbluetoothadapterPlugin();
         final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutterbluetoothadapter");
         channel.setMethodCallHandler(flutterbluetoothadapterPlugin);
@@ -217,9 +225,13 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
     private String checkBluetoothOnOff(Result result) {
         if (bluetoothAdapter == null) {
             //Bluetooth is not supported
+            Toast.makeText(context, "Device doesnot support Bluetooth", Toast.LENGTH_LONG).show();
             result.success(false);
         } else {
             if (!bluetoothAdapter.isEnabled()) {
+                btEnabelingIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+//                startActivityForResult(this, btEnabelingIntent, 1);
+                Toast.makeText(context, "Turn on your Bluetooth", Toast.LENGTH_LONG).show();
                 result.success(false);
             } else {
                 result.success(true);
