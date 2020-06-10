@@ -16,16 +16,24 @@ class Flutterbluetoothadapter {
         .invokeMethod('initBlutoothConnection', {"uuid": uuid});
   }
 
-  Future<List> getDevices() async {
+  Future<List<BtDevice>> getDevices() async {
     List devices = await _channel.invokeMethod('getBtDevices');
-    print("HERE - ${devices}");
-    return devices;
+    List<BtDevice> responseList = [];
+    devices.forEach((element) {
+      BtDevice device = BtDevice.fromJson(element);
+      responseList.add(device);
+    });
+    return responseList;
   }
 
-  Future<String> getDevice(int index) async {
-    var device = await _channel.invokeMethod('getBtDevice');
-    print("HERE - ${device}");
-    return device;
+  Future<BtDevice> getDevice(String address) async {
+    Map device =
+        await _channel.invokeMethod('getBtDevice', {"address": address});
+    if (device == null) {
+      return null;
+    }
+    BtDevice btDevice = BtDevice.fromJson(device);
+    return btDevice;
   }
 
   Future<bool> checkBluetooth() async {
@@ -61,5 +69,17 @@ class Flutterbluetoothadapter {
 
   Stream<dynamic> receiveMessages() {
     return _receivedMessagesEventChannel.receiveBroadcastStream();
+  }
+}
+
+class BtDevice {
+  String address;
+  String name;
+
+  BtDevice(this.address, this.name);
+
+  BtDevice.fromJson(Map data) {
+    address = data["address"];
+    name = data["name"];
   }
 }

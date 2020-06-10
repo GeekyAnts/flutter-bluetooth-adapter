@@ -12,12 +12,12 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Set;
 import java.util.UUID;
 
@@ -159,10 +159,14 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
             case "getBtDevices":
                 Set<BluetoothDevice> devices = bluetoothAdapter.getBondedDevices();
                 btDevices = new BluetoothDevice[devices.size()];
-                ArrayList<String> strings = new ArrayList<String>();
+
+                ArrayList<HashMap<String, String>> strings = new ArrayList<HashMap<String, String>>();
                 int counter = 0;
                 for (BluetoothDevice device : devices) {
-                    strings.add(device.getName());
+                    HashMap<String, String> deviceData = new HashMap<String, String>();
+                    deviceData.put("name", device.getName());
+                    deviceData.put("address", device.getAddress());
+                    strings.add(deviceData);
                     btDevices[counter] = device;
                     counter++;
                 }
@@ -170,10 +174,24 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
                 break;
 
             case "getBtDevice":
-                if ((btDevices != null) || (btDevices.length > 0))
-                    result.success(btDevices[0].getName());
-                else
-                    result.success("NO DEVICES FOUND!");
+                if ((btDevices != null) || (btDevices.length > 0)) {
+                    String address = call.argument("address");
+                    HashMap<String, String> deviceData = new HashMap<String, String>();
+
+                    for (BluetoothDevice device : btDevices) {
+                        if (device.getAddress() == address) {
+                            deviceData.put("name", device.getName());
+                            deviceData.put("address", device.getAddress());
+                            break;
+                        }
+                    }
+                    if (deviceData.isEmpty()) {
+                        result.success(null);
+                    } else {
+                        result.success(deviceData);
+                    }
+                } else
+                    result.success(null);
                 break;
 
             case "checkBt":
