@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5042604b-11b2-40ca-ba49-824fb9a5a726" name="Default Changelist" comment="fixed type mismatch errors">
+    <list default="true" id="5042604b-11b2-40ca-ba49-824fb9a5a726" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutterbluetoothadapter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutterbluetoothadapter.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591357157273</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="sending Address and name both, while listing a BT device">
+      <created>1591783860568</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591783860568</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +98,7 @@
     <MESSAGE value="implemented event channels for subscribing to handlers" />
     <MESSAGE value="code refactor" />
     <MESSAGE value="fixed type mismatch errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed type mismatch errors" />
+    <MESSAGE value="sending Address and name both, while listing a BT device" />
+    <option name="LAST_COMMIT_MESSAGE" value="sending Address and name both, while listing a BT device" />
   </component>
 </project>
