@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -209,10 +208,13 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
 
             case "startClient":
                 try {
-                    System.out.println("LENGTH " + btDevices.length);
-                    Log.d("DEBUG HEREEEE", "LENGTH " + btDevices.length);
                     int index = call.argument("index");
-                    ClientClass clientClass = new ClientClass(btDevices[index]);
+                    Boolean isSecure = false;
+                    isSecure = call.argument("isSecure");
+                    if (isSecure == null) {
+                        isSecure = false;
+                    }
+                    ClientClass clientClass = new ClientClass(btDevices[index], isSecure);
                     clientClass.start();
                     result.success(true);
                 } catch (Exception except) {
@@ -222,9 +224,19 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
             case "sendMessage":
                 try {
                     String message = call.argument("message");
+                    Boolean sendByteByByte;
+                    sendByteByByte = call.argument("sendByteByByte");
+                    if (sendByteByByte == null) {
+                        sendByteByByte = false;
+                    }
                     String string = String.valueOf(message);
-                    sendRecieve.write(string.getBytes());
-                    result.success(true);
+                    Boolean res;
+                    if (sendByteByByte) {
+                        res = sendRecieve.writeByteByByte(string.getBytes());
+                    } else {
+                        res = sendRecieve.writeAsBytes(string.getBytes());
+                    }
+                    result.success(res);
                 } catch (Exception except) {
                     result.success(false);
                 }
@@ -265,7 +277,7 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
         public ServerClass() {
             try {
                 serverSocket = bluetoothAdapter.listenUsingRfcommWithServiceRecord(APP_NAME, MY_UUID);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -301,11 +313,14 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
         private BluetoothDevice device;
         private BluetoothSocket socket;
 
-        public ClientClass(BluetoothDevice device1) {
+        public ClientClass(BluetoothDevice device1, Boolean isSecureConnection) {
             device = device1;
             try {
-                socket = device.createRfcommSocketToServiceRecord(MY_UUID);
-            } catch (IOException e) {
+                if (isSecureConnection)
+                    socket = device.createRfcommSocketToServiceRecord(MY_UUID);
+                else
+                    socket = device.createInsecureRfcommSocketToServiceRecord(MY_UUID);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -318,7 +333,7 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
                 handler.sendMessage(message);
                 sendRecieve = new SendRecieve(socket);
                 sendRecieve.start();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 Message message = Message.obtain();
                 message.what = STATE_CONNECTION_FAILED;
@@ -340,7 +355,7 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
             try {
                 tempInputStr = bluetoothSocket.getInputStream();
                 tempOutputStr = bluetoothSocket.getOutputStream();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             inputStream = tempInputStr;
@@ -355,17 +370,33 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
                 try {
                     bytes = inputStream.read(buffer);
                     handler.obtainMessage(STATE_MESSAGE_RECEIVED, bytes, -1, buffer).sendToTarget();
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }
 
-        public void write(byte[] bytes) {
+        public Boolean writeAsBytes(byte[] bytes) {
             try {
                 outputStream.write(bytes);
-            } catch (IOException e) {
+                return true;
+            } catch (Exception e) {
                 e.printStackTrace();
+                return false;
+            }
+        }
+
+        public Boolean writeByteByByte(byte[] bytes) {
+            try {
+                for (byte b : bytes) {
+                    outputStream.write((int) b);
+                }
+//                byte b = (byte) '.';
+//                outputStream.write((int) b);
+                return true;
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
             }
         }
     }

@@ -48,19 +48,23 @@ class Flutterbluetoothadapter {
     return true;
   }
 
-  Future<bool> startClient(int position) async {
+  Future<bool> startClient(int position, [bool isSecure = false]) async {
     print("HERE $position");
-    var result =
-        await _channel.invokeMethod('startClient', {"index": position ?? 0});
+    var result = await _channel.invokeMethod('startClient', {
+      "index": position ?? 0,
+      "isSecure": isSecure ?? false,
+    });
     print("HERE ${result}");
     return true;
   }
 
-  Future<bool> sendMessage(String message) async {
-    var result =
-        await _channel.invokeMethod('sendMessage', {"message": message ?? ""});
+  Future<bool> sendMessage(String message, {bool sendByteByByte}) async {
+    bool result = await _channel.invokeMethod('sendMessage', {
+      "message": message ?? "",
+      "sendByteByByte": sendByteByByte ?? false,
+    });
     print("HERE ${result}");
-    return true;
+    return result ?? false;
   }
 
   Stream<dynamic> connectionStatus() {
