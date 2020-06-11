@@ -5,10 +5,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5042604b-11b2-40ca-ba49-824fb9a5a726" name="Default Changelist" comment="changed version number">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/aditya/flutterbluetoothadapter/FlutterbluetoothadapterPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/flutterbluetoothadapter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutterbluetoothadapter.dart" afterDir="false" />
+    <list default="true" id="5042604b-11b2-40ca-ba49-824fb9a5a726" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591785752690</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fascilitated user to choose between secure/insecure connection and sending data byte by byte or as one stream">
+      <created>1591862388160</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1591862388160</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,6 +119,7 @@
     <MESSAGE value="fixed type mismatch errors" />
     <MESSAGE value="sending Address and name both, while listing a BT device" />
     <MESSAGE value="changed version number" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed version number" />
+    <MESSAGE value="fascilitated user to choose between secure/insecure connection and sending data byte by byte or as one stream" />
+    <option name="LAST_COMMIT_MESSAGE" value="fascilitated user to choose between secure/insecure connection and sending data byte by byte or as one stream" />
   </component>
 </project>
