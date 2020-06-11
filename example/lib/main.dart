@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   Flutterbluetoothadapter flutterbluetoothadapter = Flutterbluetoothadapter();
   StreamSubscription _btConnectionStatusListener, _btReceivedMessageListener;
   String _connectionStatus = "NONE";
-  List devices = [];
+  List<BtDevice> devices = [];
   String _recievedMessage;
   TextEditingController _controller = TextEditingController();
 
@@ -34,16 +34,16 @@ class _MyAppState extends State<MyApp> {
   _startListening() {
     _btConnectionStatusListener =
         flutterbluetoothadapter.connectionStatus().listen((dynamic status) {
-      setState(() {
-        _connectionStatus = status.toString();
-      });
-    });
+          setState(() {
+            _connectionStatus = status.toString();
+          });
+        });
     _btReceivedMessageListener =
         flutterbluetoothadapter.receiveMessages().listen((dynamic newMessage) {
-      setState(() {
-        _recievedMessage = newMessage.toString();
-      });
-    });
+          setState(() {
+            _recievedMessage = newMessage.toString();
+          });
+        });
   }
 
   @override
@@ -119,8 +119,11 @@ class _MyAppState extends State<MyApp> {
                     padding: const EdgeInsets.all(8.0),
                     child: RaisedButton(
                       onPressed: () {
-                        flutterbluetoothadapter
-                            .sendMessage(_controller.text ?? "no msg");
+                        flutterbluetoothadapter.sendMessage(
+                            _controller.text ?? "no msg",
+                            sendByteByByte: false);
+//                        flutterbluetoothadapter.sendMessage(".",
+//                            sendByteByByte: true);
                         _controller.text = "";
                       },
                       child: Text('SEND'),
@@ -149,13 +152,13 @@ class _MyAppState extends State<MyApp> {
         InkWell(
           key: UniqueKey(),
           onTap: () {
-            flutterbluetoothadapter.startClient(devices.indexOf(element));
+            flutterbluetoothadapter.startClient(devices.indexOf(element), true);
           },
           child: Container(
             padding: EdgeInsets.all(4),
             decoration: BoxDecoration(border: Border.all()),
             child: Text(
-              element.toString(),
+              element.name.toString(),
               style: TextStyle(fontSize: 18),
             ),
           ),
