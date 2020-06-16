@@ -52,7 +52,7 @@ public class BluetoothadapterPlugin implements FlutterPlugin, MethodCallHandler 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
         context = flutterPluginBinding.getApplicationContext();
-        channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "flutterbluetoothadapter");
+        channel = new MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "bluetoothadapter");
         channel.setMethodCallHandler(this);
         connectionStatus = new EventChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "connection_status");
         connectionStatus.setStreamHandler(connectionStatusStreamHandler);
@@ -63,7 +63,7 @@ public class BluetoothadapterPlugin implements FlutterPlugin, MethodCallHandler 
     public static void registerWith(PluginRegistry.Registrar registrar) {
         context = registrar.context();
         BluetoothadapterPlugin flutterbluetoothadapterPlugin = new BluetoothadapterPlugin();
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutterbluetoothadapter");
+        final MethodChannel channel = new MethodChannel(registrar.messenger(), "bluetoothadapter");
         channel.setMethodCallHandler(flutterbluetoothadapterPlugin);
         final EventChannel connectionStatusEventChannel = new EventChannel(registrar.messenger(), "connection_status");
         connectionStatusEventChannel.setStreamHandler(connectionStatusStreamHandler);
