@@ -1,8 +1,10 @@
 name: flutterbluetoothadapter
 description: A new Flutter plugin.
 version: 1.0.0
-author:
-homepage:
+authors:
+  - adityasoni5859@gmail.com
+
+homepage: https://flutter.dev/
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
