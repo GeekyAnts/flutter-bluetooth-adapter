@@ -1,4 +1,4 @@
-group 'com.aditya.flutterbluetoothadapter'
+group 'com.aditya.bluetoothadapter'
 version '1.0'
 
 buildscript {

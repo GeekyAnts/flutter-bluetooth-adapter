@@ -1,6 +1,6 @@
-# flutterbluetoothadapter_example
+# bluetoothadapter_example
 
-Demonstrates how to use the flutterbluetoothadapter plugin.
+Demonstrates how to use the bluetoothadapter plugin.
 
 ## Getting Started
 

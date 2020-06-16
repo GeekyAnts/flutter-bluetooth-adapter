@@ -1,3 +1,3 @@
 ## 1.0.0
 
-* Added Bluetooth functionality for Android
+* Added bluetooth functionality for android.

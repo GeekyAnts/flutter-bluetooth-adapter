@@ -1,4 +1,4 @@
-# flutterbluetoothadapter
+# bluetoothadapter
 
 A Flutter plugin to expose the features of Bluetooth Adapter for **Android only**. The primary purpose of this project was to communicate between flutter and Rasburry Pie using Bluetooth.
 
@@ -19,8 +19,8 @@ A Flutter plugin to expose the features of Bluetooth Adapter for **Android only*
 For a full example please check /example folder. Here are only the most important parts of the code to illustrate how to use the library.
 
     //Initiatinng the bluetooth adapter
-    Flutterbluetoothadapter flutterbluetoothadapter = Flutterbluetoothadapter();
-	
+    Bluetoothadapter flutterbluetoothadapter = Bluetoothadapter();
+
 	//Listening to the connection status listener
 	String _connectionStatus = "NONE";
     StreamSubscription _btConnectionStatusListener =flutterbluetoothadapter.connectionStatus().listen((dynamic status) {
@@ -28,7 +28,7 @@ For a full example please check /example folder. Here are only the most importan
         _connectionStatus = status.toString();
       });
     });
-	
+
 	//Listening to the recieved messages
 	String _recievedMessage;
     StreamSubscription _btReceivedMessageListener = flutterbluetoothadapter.receiveMessages().listen((dynamic newMessage) {
@@ -48,17 +48,18 @@ For a full example please check /example folder. Here are only the most importan
 #### Starting BT server
 
     await flutterbluetoothadapter.startServer();
-	
+
 #### Starting BT client
 
     flutterbluetoothadapter.startClient(devices.indexOf(element), true);
-	
+
 #### Sending message
 
     flutterbluetoothadapter.sendMessage(messageString);
-	
+
 #### Check BT connection
 	await flutterbluetoothadapter.checkBluetooth(); //returns bool
-	
+
 #### Set UUID
 	flutterbluetoothadapter.initBlutoothConnection(uuid);
+

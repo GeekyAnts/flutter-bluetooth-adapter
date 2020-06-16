@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 
-class Flutterbluetoothadapter {
-  MethodChannel _channel = const MethodChannel('flutterbluetoothadapter');
+class Bluetoothadapter {
+  static const MethodChannel _channel = const MethodChannel('bluetoothadapter');
 
   static const EventChannel _connectionStatusEventChannel =
       const EventChannel('connection_status');

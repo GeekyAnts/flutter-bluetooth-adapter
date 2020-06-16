@@ -1,4 +1,4 @@
-package com.aditya.flutterbluetoothadapter_example;
+package com.aditya.bluetoothadapter_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 

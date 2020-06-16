@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5042604b-11b2-40ca-ba49-824fb9a5a726" name="Default Changelist" comment="updated pubspec.yaml" />
+    <list default="true" id="0b8f54e9-d8cd-40e2-9762-54c66b1a00d8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/android.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../android/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../android/app/app.iml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,20 +19,20 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="Samsung_A10_API_R" />
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="branch_stable" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1coIIVyHbKezg78KuaJKdMCVy2L" />
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1dOdDojiSx9JYkBdV1nwk42evRH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -47,62 +52,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5042604b-11b2-40ca-ba49-824fb9a5a726" name="Default Changelist" comment="" />
-      <created>1591188439408</created>
+      <changelist id="0b8f54e9-d8cd-40e2-9762-54c66b1a00d8" name="Default Changelist" comment="" />
+      <created>1592299956483</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1591188439408</updated>
+      <updated>1592299956483</updated>
     </task>
-    <task id="LOCAL-00001" summary="implemented event channels for subscribing to handlers">
-      <created>1591276728979</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1591276728979</updated>
-    </task>
-    <task id="LOCAL-00002" summary="code refactor">
-      <created>1591350351889</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1591350351889</updated>
-    </task>
-    <task id="LOCAL-00003" summary="fixed type mismatch errors">
-      <created>1591357157273</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1591357157273</updated>
-    </task>
-    <task id="LOCAL-00004" summary="sending Address and name both, while listing a BT device">
-      <created>1591783860568</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1591783860568</updated>
-    </task>
-    <task id="LOCAL-00005" summary="changed version number">
-      <created>1591785752690</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1591785752690</updated>
-    </task>
-    <task id="LOCAL-00006" summary="fascilitated user to choose between secure/insecure connection and sending data byte by byte or as one stream">
-      <created>1591862388160</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1591862388160</updated>
-    </task>
-    <task id="LOCAL-00007" summary="updated pubspec.yaml">
-      <created>1592296173017</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1592296173017</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,22 +65,10 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="implemented event channels for subscribing to handlers" />
-    <MESSAGE value="code refactor" />
-    <MESSAGE value="fixed type mismatch errors" />
-    <MESSAGE value="sending Address and name both, while listing a BT device" />
-    <MESSAGE value="changed version number" />
-    <MESSAGE value="fascilitated user to choose between secure/insecure connection and sending data byte by byte or as one stream" />
-    <MESSAGE value="updated pubspec.yaml" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated pubspec.yaml" />
   </component>
 </project>

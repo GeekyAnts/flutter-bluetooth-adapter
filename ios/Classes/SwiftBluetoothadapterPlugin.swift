@@ -1,10 +1,10 @@
 import Flutter
 import UIKit
 
-public class SwiftFlutterbluetoothadapterPlugin: NSObject, FlutterPlugin {
+public class SwiftBluetoothadapterPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutterbluetoothadapter", binaryMessenger: registrar.messenger())
-    let instance = SwiftFlutterbluetoothadapterPlugin()
+    let channel = FlutterMethodChannel(name: "bluetoothadapter", binaryMessenger: registrar.messenger())
+    let instance = SwiftBluetoothadapterPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

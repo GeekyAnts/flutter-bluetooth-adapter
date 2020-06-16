@@ -1,8 +1,8 @@
-name: flutter_bluetooth_adapter
-description: A Flutter plugin to expose the features of Bluetooth Adapter for Android only. The primary purpose of this project was to communicate between flutter and Rasburry Pie using Bluetooth.
+name: bluetoothadapter
+description: A Flutter plugin to expose the features of Bluetooth Adapter for **Android only**. The primary purpose of this project was to communicate between flutter and Rasburry Pie using Bluetooth.
 version: 1.0.0
-
-homepage: https://flutter.dev/
+author:
+homepage:
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -28,10 +28,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.aditya.flutterbluetoothadapter
-        pluginClass: FlutterbluetoothadapterPlugin
+        package: com.aditya.bluetoothadapter
+        pluginClass: BluetoothadapterPlugin
       ios:
-        pluginClass: FlutterbluetoothadapterPlugin
+        pluginClass: BluetoothadapterPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

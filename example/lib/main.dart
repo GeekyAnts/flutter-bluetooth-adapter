@@ -1,7 +1,7 @@
 import 'dart:async';
 
+import 'package:bluetoothadapter/bluetoothadapter.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bluetooth_adapter/flutterbluetoothadapter.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Flutterbluetoothadapter flutterbluetoothadapter = Flutterbluetoothadapter();
+  Bluetoothadapter flutterbluetoothadapter = Bluetoothadapter();
   StreamSubscription _btConnectionStatusListener, _btReceivedMessageListener;
   String _connectionStatus = "NONE";
   List<BtDevice> devices = [];

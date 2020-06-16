@@ -1,4 +1,4 @@
-package com.aditya.flutterbluetoothadapter;
+package com.aditya.bluetoothadapter;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -29,9 +29,9 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
 
 /**
- * FlutterbluetoothadapterPlugin
+ * BluetoothadapterPlugin
  */
-public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallHandler {
+public class BluetoothadapterPlugin implements FlutterPlugin, MethodCallHandler {
     private MethodChannel channel;
     private EventChannel connectionStatus, receiveMessages;
     BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -62,7 +62,7 @@ public class FlutterbluetoothadapterPlugin implements FlutterPlugin, MethodCallH
 
     public static void registerWith(PluginRegistry.Registrar registrar) {
         context = registrar.context();
-        FlutterbluetoothadapterPlugin flutterbluetoothadapterPlugin = new FlutterbluetoothadapterPlugin();
+        BluetoothadapterPlugin flutterbluetoothadapterPlugin = new BluetoothadapterPlugin();
         final MethodChannel channel = new MethodChannel(registrar.messenger(), "flutterbluetoothadapter");
         channel.setMethodCallHandler(flutterbluetoothadapterPlugin);
         final EventChannel connectionStatusEventChannel = new EventChannel(registrar.messenger(), "connection_status");
