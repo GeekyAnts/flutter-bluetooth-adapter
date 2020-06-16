@@ -1,5 +1,5 @@
 name: flutterbluetoothadapter
-description: A new Flutter plugin.
+description: A Flutter plugin to expose the features of Bluetooth Adapter for Android only. The primary purpose of this project was to communicate between flutter and Rasburry Pie using Bluetooth.
 version: 1.0.0
 
 homepage: https://flutter.dev/
