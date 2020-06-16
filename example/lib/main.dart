@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutterbluetoothadapter/flutterbluetoothadapter.dart';
+import 'package:flutter_bluetooth_adapter/flutterbluetoothadapter.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,16 +34,16 @@ class _MyAppState extends State<MyApp> {
   _startListening() {
     _btConnectionStatusListener =
         flutterbluetoothadapter.connectionStatus().listen((dynamic status) {
-          setState(() {
-            _connectionStatus = status.toString();
-          });
-        });
+      setState(() {
+        _connectionStatus = status.toString();
+      });
+    });
     _btReceivedMessageListener =
         flutterbluetoothadapter.receiveMessages().listen((dynamic newMessage) {
-          setState(() {
-            _recievedMessage = newMessage.toString();
-          });
-        });
+      setState(() {
+        _recievedMessage = newMessage.toString();
+      });
+    });
   }
 
   @override

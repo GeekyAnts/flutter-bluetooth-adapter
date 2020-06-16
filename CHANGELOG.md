@@ -1,3 +1,3 @@
-## 1.0.0
+## 0.0.1
 
-* Exposed Bluetooth adapter capabilities for Android.
+* TODO: Describe initial release.
