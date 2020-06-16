@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a6bbfe01-f375-44be-888e-629828ede02a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../../android/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../android/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../android/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../android/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../android/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../android/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../android/android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../android/android.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../android/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../android/app/app.iml" afterDir="false" />
+    <list default="true" id="bcc38649-3183-4203-a884-74e09b076cde" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,9 +28,9 @@
     </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1dOdUNJg7p1ca6jux1U5fbteIX6" />
+  <component name="ProjectId" id="1dOfIzcCLz7A319Wt3I5g4Pjoln" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -116,11 +113,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a6bbfe01-f375-44be-888e-629828ede02a" name="Default Changelist" comment="" />
-      <created>1592300087673</created>
+      <changelist id="bcc38649-3183-4203-a884-74e09b076cde" name="Default Changelist" comment="" />
+      <created>1592300984194</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1592300087673</updated>
+      <updated>1592300984194</updated>
     </task>
     <servers />
   </component>
