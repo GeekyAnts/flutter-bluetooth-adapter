@@ -12,7 +12,7 @@ A Flutter plugin to expose the features of Bluetooth Adapter for **Android only*
 - Start Bluetooth client.
 - Send message to a connected device.
 - Stream for listening to received messages.
-- Stream for listening to connection status (CONNECTED, CONNECTING, CONNECTION FAILED, LISTENING).
+- Stream for listening to connection status (CONNECTED, CONNECTING, CONNECTION FAILED, LISTENING, DISCONNECTED).
 
 ### Getting Started
 

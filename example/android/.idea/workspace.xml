@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46ed4ce9-66ff-40ab-9497-6f5f64746082" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e397a8b6-e36d-4b4e-b3ed-9cf9c4129368" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../android/src/main/java/com/aditya/bluetoothadapter/BluetoothadapterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/src/main/java/com/aditya/bluetoothadapter/BluetoothadapterPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/../.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lib/bluetoothadapter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../lib/bluetoothadapter.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1dOyPYe6kXhrgZmtpRecrkXGR5M" />
+  <component name="ProjectId" id="1dUNrUdPuUmiTWETydm3Hjiig8O" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -114,11 +113,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="46ed4ce9-66ff-40ab-9497-6f5f64746082" name="Default Changelist" comment="" />
-      <created>1592310410932</created>
+      <changelist id="e397a8b6-e36d-4b4e-b3ed-9cf9c4129368" name="Default Changelist" comment="" />
+      <created>1592475910247</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1592310410932</updated>
+      <updated>1592475910247</updated>
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 name: bluetoothadapter
 description: A Flutter plugin to expose the features of Bluetooth Adapter for **Android only**.
-version: 1.1.0
+version: 1.1.1
 #author:
 homepage: https://flutter.dev/
 

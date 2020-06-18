@@ -42,6 +42,7 @@ public class BluetoothadapterPlugin implements FlutterPlugin, MethodCallHandler 
     static final int STATE_CONNECTED = 3;
     static final int STATE_CONNECTION_FAILED = 4;
     static final int STATE_MESSAGE_RECEIVED = 5;
+    static final int DISCONNECTED = 6;
     private static final String APP_NAME = "BtChat";
     private static UUID MY_UUID = UUID.fromString("20585adb-d260-445e-934b-032a2c8b2e14");
     private static EventChannel.EventSink eventSink;
@@ -130,6 +131,11 @@ public class BluetoothadapterPlugin implements FlutterPlugin, MethodCallHandler 
                     String tempMsg = new String(readBuffer, 0, msg.arg1);
                     if (receiveMessageSink != null) {
                         receiveMessageSink.success(tempMsg);
+                    }
+                    break;
+                case DISCONNECTED:
+                    if (eventSink != null) {
+                        eventSink.success("Disconnected");
                     }
                     break;
                 default:
@@ -371,6 +377,9 @@ public class BluetoothadapterPlugin implements FlutterPlugin, MethodCallHandler 
                     bytes = inputStream.read(buffer);
                     handler.obtainMessage(STATE_MESSAGE_RECEIVED, bytes, -1, buffer).sendToTarget();
                 } catch (Exception e) {
+                    Message message = Message.obtain();
+                    message.what = DISCONNECTED;
+                    handler.sendMessage(message);
                     e.printStackTrace();
                 }
             }
