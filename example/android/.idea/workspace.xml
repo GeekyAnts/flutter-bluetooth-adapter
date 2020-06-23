@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e397a8b6-e36d-4b4e-b3ed-9cf9c4129368" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../android/src/main/java/com/aditya/bluetoothadapter/BluetoothadapterPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/src/main/java/com/aditya/bluetoothadapter/BluetoothadapterPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lib/bluetoothadapter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../lib/bluetoothadapter.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +11,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="OJOBNZJBQO8SLB4D" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Samsung_A10_API_R" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />

@@ -1,6 +1,10 @@
 # bluetoothadapter
 
-A Flutter plugin to expose the features of Bluetooth Adapter for **Android only**. The primary purpose of this project was to communicate between flutter and Rasburry Pie using Bluetooth.
+A Flutter plugin to expose the features of Bluetooth Adapter for **Android only**.
+
+## Objective
+
+The primary purpose of this project was to communicate between flutter and Rasburry Pie using Bluetooth.
 
 ## Main Features
 - Setting up a UUID from user end.
