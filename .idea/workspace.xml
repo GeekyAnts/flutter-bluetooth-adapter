@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0b8f54e9-d8cd-40e2-9762-54c66b1a00d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/android/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/bluetoothadapter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/bluetoothadapter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592478170783</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="updated readme and license">
+      <created>1592904551259</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1592904551259</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -86,6 +95,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="code refactor" />
     <MESSAGE value="added new connection status as Disconnected" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new connection status as Disconnected" />
+    <MESSAGE value="updated readme and license" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated readme and license" />
   </component>
 </project>

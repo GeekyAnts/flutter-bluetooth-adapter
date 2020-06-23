@@ -1,3 +1,7 @@
+## 1.1.3
+
+* Improved documentation and hints
+
 ## 1.1.2
 
 * Updated README.md
