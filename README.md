@@ -4,7 +4,7 @@ A Flutter plugin to expose the features of Bluetooth Adapter for **Android only*
 
 ## Objective
 
-The primary purpose of this project was to communicate between flutter and Rasburry Pie using Bluetooth.
+The primary purpose of this project was to communicate between flutter and Raspberry Pi using Bluetooth.
 
 ## Main Features
 - Setting up a UUID from user end.
@@ -12,7 +12,6 @@ The primary purpose of this project was to communicate between flutter and Rasbu
 - Getting list of paired devices.
 - Get a particular paired device info.
 - Start Bluetooth server.
-- Start Bluetooth client.
 - Start Bluetooth client.
 - Send message to a connected device.
 - Stream for listening to received messages.
