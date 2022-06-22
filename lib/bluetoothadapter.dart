@@ -13,7 +13,7 @@ class Bluetoothadapter {
       const EventChannel('recieved_message_events');
 
   /// Initiates the Bluetooth Connection by setting up a UUID
-  Future<bool> initBlutoothConnection(String uuid) async {
+  Future<bool?> initBlutoothConnection(String uuid) async {
     return await _channel
         .invokeMethod('initBlutoothConnection', {"uuid": uuid});
   }
@@ -30,8 +30,8 @@ class Bluetoothadapter {
   }
 
   /// Gets a Particular Paired from the list of paired devices from its Device(Mac) address
-  Future<BtDevice> getDevice(String address) async {
-    Map device =
+  Future<BtDevice?> getDevice(String address) async {
+    Map? device =
         await _channel.invokeMethod('getBtDevice', {"address": address});
     if (device == null) {
       return null;
@@ -41,8 +41,8 @@ class Bluetoothadapter {
   }
 
   /// Checks the Bluetooth status and returns true if Bluetooth is turned on
-  Future<bool> checkBluetooth() async {
-    bool result = await _channel.invokeMethod('checkBt');
+  Future<bool?> checkBluetooth() async {
+    bool? result = await _channel.invokeMethod('checkBt');
     return result;
   }
 
@@ -56,16 +56,16 @@ class Bluetoothadapter {
   Future<bool> startClient(int position, [bool isSecure = false]) async {
     print("HERE $position");
     var result = await _channel.invokeMethod('startClient', {
-      "index": position ?? 0,
-      "isSecure": isSecure ?? false,
+      "index": position,
+      "isSecure": isSecure,
     });
     return result ?? false;
   }
 
   /// Sends message from client to server and vice versa, byte by byte or as a data stream
-  Future<bool> sendMessage(String message, {bool sendByteByByte}) async {
-    bool result = await _channel.invokeMethod('sendMessage', {
-      "message": message ?? "",
+  Future<bool> sendMessage(String message, {bool? sendByteByByte}) async {
+    bool? result = await _channel.invokeMethod('sendMessage', {
+      "message": message,
       "sendByteByByte": sendByteByByte ?? false,
     });
     return result ?? false;
@@ -84,8 +84,8 @@ class Bluetoothadapter {
 
 /// A Data structure to hold device information of a paired bluetooth device
 class BtDevice {
-  String address;
-  String name;
+  String? address;
+  String? name;
 
   BtDevice(this.address, this.name);
 
